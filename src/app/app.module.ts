@@ -16,6 +16,7 @@ import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
 import { HomeComponent } from './home';
+import { RecordComponent } from './home'
 import { LandingComponent } from './landing'
 import { LoginComponent } from './login'
 import { AboutComponent } from './about';
@@ -48,6 +49,7 @@ type StoreType = {
     LoginComponent,
     HomeComponent,
     NoContentComponent,
+    RecordComponent,
     XLarge
   ],
   imports: [ // import Angular's modules

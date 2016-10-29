@@ -1,11 +1,4 @@
 <div class="card-container">
   <h1>Записи</h1>
-  <div *ngFor="let file of audios" class="card">
-    <span class="name">{{file.name}}</span>
-    <br/>
-    <span class="author">Автор: {{file.author}}</span>
-    <audio controls>
-      Your browser does not support the audio tag.
-    </audio>
-  </div>
+  <record *ngFor="let record of audios" [audio]="record"></record>
 </div>
