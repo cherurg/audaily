@@ -1,8 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, NgZone } from '@angular/core';
+import firebase from 'firebase'
 
 import { AppState } from '../app.service';
 import { Title } from './title';
 import { XLarge } from './x-large';
+
+interface AudioFile {
+  data: string
+  author: string
+  name: string
+}
 
 @Component({
   // The selector is what angular internally uses
@@ -19,16 +26,22 @@ import { XLarge } from './x-large';
   templateUrl: './home.component.html'
 })
 export class HomeComponent {
+  public audios: AudioFile[] = []
+
   // Set our default values
   localState = { value: '' };
   // TypeScript public modifiers
-  constructor(public appState: AppState, public title: Title) {
+  constructor(public appState: AppState, public title: Title, private zone: NgZone) {
 
   }
 
   ngOnInit() {
     console.log('hello `Home` component');
-    // this.title.getData().subscribe(data => this.data = data);
+    firebase.database().ref('/audios').once('value').then((snapshot) => {
+      this.zone.run(() => {
+        this.audios = snapshot.val()
+      })
+    })
   }
 
   submitState(value: string) {

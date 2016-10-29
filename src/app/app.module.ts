@@ -1,4 +1,5 @@
 import { NgModule, ApplicationRef } from '@angular/core';
+import { CommonModule } from '@angular/common'
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -51,6 +52,7 @@ type StoreType = {
   ],
   imports: [ // import Angular's modules
     BrowserModule,
+    CommonModule,
     FormsModule,
     HttpModule,
     RouterModule.forRoot(ROUTES, { useHash: false })
