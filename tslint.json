@@ -117,7 +117,7 @@
       "single",
       "avoid-escape"
     ],
-    "semicolon": [true, "always"],
+    "semicolon": [false, "always"],
     "variable-name": [
       true,
       "check-format",

@@ -4,6 +4,19 @@
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { decorateModuleRef } from './app/environment';
 import { bootloader } from '@angularclass/hmr';
+
+import firebase from 'firebase'
+
+let config = {
+  apiKey: 'AIzaSyCcFAZHxNJdZjJohBAsjV2x4EAk1gei9CM',
+  authDomain: 'long-read-fan.firebaseapp.com',
+  databaseURL: 'https://long-read-fan.firebaseio.com',
+  storageBucket: 'long-read-fan.appspot.com',
+  messagingSenderId: '838839688601',
+}
+
+firebase.initializeApp(config)
+
 /*
  * App Module
  * our top level module that holds all of our components
