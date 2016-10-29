@@ -1,20 +1,25 @@
-import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './home';
-import { AboutComponent } from './about';
-import { NoContentComponent } from './no-content';
+import { Routes, RouterModule } from '@angular/router'
+import { HomeComponent } from './home'
+import { LandingComponent } from './landing'
+// import { AboutComponent } from './about'
+import { NoContentComponent } from './no-content'
+import { LoginComponent } from './login'
 
-import { DataResolver } from './app.resolver';
+import { AuthGuard } from './shared/auth'
+
+import { DataResolver } from './app.resolver'
 
 
 export const ROUTES: Routes = [
-  { path: '',      component: HomeComponent },
-  { path: 'home',  component: HomeComponent },
-  { path: 'about', component: AboutComponent },
-  {
+  { path: '',      component: LandingComponent },
+  { path: 'home',  component: HomeComponent, canActivate: [ AuthGuard ] },
+  { path: 'login', component: LoginComponent, canActivate: [ AuthGuard ] },
+  // { path: 'about', component: AboutComponent },
+  /*{
     path: 'detail', loadChildren: () => System.import('./+detail').then((comp: any) => {
-      return comp.default;
+      return comp.default
     })
     ,
-  },
+  },*/
   { path: '**',    component: NoContentComponent },
-];
+]

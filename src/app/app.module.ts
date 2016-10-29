@@ -15,6 +15,8 @@ import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
 import { HomeComponent } from './home';
+import { LandingComponent } from './landing'
+import { LoginComponent } from './login'
 import { AboutComponent } from './about';
 import { NoContentComponent } from './no-content';
 import { XLarge } from './home/x-large';
@@ -39,6 +41,8 @@ type StoreType = {
   declarations: [
     AppComponent,
     AboutComponent,
+    LandingComponent,
+    LoginComponent,
     HomeComponent,
     NoContentComponent,
     XLarge
@@ -47,7 +51,7 @@ type StoreType = {
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(ROUTES, { useHash: true })
+    RouterModule.forRoot(ROUTES, { useHash: false })
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,
