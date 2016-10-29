@@ -1,4 +1,5 @@
 import { Component } from '@angular/core'
+import { Router } from '@angular/router'
 import firebase from 'firebase'
 
 import { AppState } from '../app.service'
@@ -9,7 +10,10 @@ import { AppState } from '../app.service'
   styleUrls: [ './landing.component.css' ]
 })
 export class LandingComponent {
-  constructor(public appState: AppState) {}
+  constructor(
+    public appState: AppState,
+    public router: Router,
+  ) {}
 
   login() {
     let provider = new firebase.auth.GoogleAuthProvider()
@@ -17,6 +21,7 @@ export class LandingComponent {
       .then((result) => {
         this.appState.set('user', result.user)
         this.appState.set('token', result.credential.accessToken)
+        this.router.navigateByUrl('/home')
       })
       .catch((error: any) => {
         console.error(error.code)

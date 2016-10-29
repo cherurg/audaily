@@ -14,9 +14,9 @@ export class AuthGuard implements CanActivate {
 
   canActivate() {
     // todo: verify the token in Firebase
-    let isLoggedIn: boolean = !!this.appState.get('token')
+    let isLoggedIn: boolean = typeof this.appState.get('token') === 'string'
     if (!isLoggedIn) {
-      this.router.navigateByUrl('/login')
+      this.router.navigateByUrl('/')
     }
     return isLoggedIn
   }
