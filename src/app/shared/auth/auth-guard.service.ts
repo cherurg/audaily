@@ -1,26 +1,23 @@
 import { Injectable } from '@angular/core'
 import { Router, CanActivate } from '@angular/router'
-import { Location } from '@angular/common'
 
-import { AuthService } from './auth.service'
+import { AppState } from '../../app.service'
 
 import 'rxjs/add/operator/do'
 
 @Injectable()
 export class AuthGuard implements CanActivate {
   constructor(
+    public appState: AppState,
     private router: Router,
-    private authService: AuthService,
-    private location: Location
   ) {}
 
   canActivate() {
-    return this.authService.isLoggedIn()
-      .do(loggedIn => {
-        if (!loggedIn) {
-          this.authService.redirectLocation = this.location.path()
-          this.router.navigateByUrl('/login')
-        }
-      })
+    // todo: verify the token in Firebase
+    let isLoggedIn: boolean = !!this.appState.get('token')
+    if (!isLoggedIn) {
+      this.router.navigateByUrl('/login')
+    }
+    return isLoggedIn
   }
 }
