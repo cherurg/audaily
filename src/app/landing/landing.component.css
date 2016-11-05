@@ -7,6 +7,11 @@ h1 {
   text-align: center;
 }
 
+.logo-img {
+  width: 100%;
+  max-width: 350px;
+}
+
 button {
   /*Reset's every elements apperance*/
   background: none repeat scroll 0 0 transparent;
