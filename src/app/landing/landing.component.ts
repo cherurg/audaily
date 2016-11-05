@@ -15,6 +15,10 @@ export class LandingComponent {
     public router: Router,
   ) {}
 
+  isLoggedIn(): boolean {
+    return typeof this.appState.get('token') === 'string'
+  }
+
   login() {
     let provider = new firebase.auth.GoogleAuthProvider()
     firebase.auth().signInWithPopup(provider)
@@ -27,5 +31,10 @@ export class LandingComponent {
         console.error(error.code)
         console.error(error.message)
       })
+  }
+
+  logout() {
+    localStorage.clear()
+    this.appState.set('token', undefined)
   }
 }

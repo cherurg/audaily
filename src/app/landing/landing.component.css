@@ -27,7 +27,11 @@ button {
   justify-content: center;
 }
 
-.enter {
+.login {
   font-size: 2em;
   margin-top: 1em;
+}
+
+.logout {
+  text-align: center;
 }
