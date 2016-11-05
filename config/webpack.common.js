@@ -24,8 +24,8 @@ const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
  */
 const HMR = helpers.hasProcessFlag('hot');
 const METADATA = {
-  title: 'Angular2 Webpack Starter by @gdi2290 from @AngularClass',
-  baseUrl: '/',
+  title: 'Audaily — Когда удобнее слушать, чем читать',
+  baseUrl: '/dist/audaily/',
   isDevServer: helpers.isWebpackDevServer()
 };
 
