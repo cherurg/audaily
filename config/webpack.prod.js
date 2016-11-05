@@ -80,7 +80,7 @@ module.exports = function (env) {
        */
       chunkFilename: '[id].[chunkhash].chunk.js',
 
-      publicPath: '/dist/',
+      publicPath: '/audaily/dist/',
     },
 
     /**
