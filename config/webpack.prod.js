@@ -40,7 +40,7 @@ module.exports = function (env) {
      * See: http://webpack.github.io/docs/configuration.html#devtool
      * See: https://github.com/webpack/docs/wiki/build-performance#sourcemaps
      */
-    // devtool: 'source-map',
+    devtool: 'source-map',
 
     /**
      * Options affecting the output of the compilation.
@@ -78,10 +78,7 @@ module.exports = function (env) {
        *
        * See: http://webpack.github.io/docs/configuration.html#output-chunkfilename
        */
-      chunkFilename: '[id].[chunkhash].chunk.js',
-
-      publicPath: '/audaily/dist/'
-
+      chunkFilename: '[id].[chunkhash].chunk.js'
     },
 
     /**
