@@ -1,6 +1,9 @@
 <span class="name">{{audio.name}}</span>
 <br/>
 <span class="author">Автор: {{audio.author}}</span>
+<span>Источник: <a href="https://slon.ru/">slon.ru</a></span>
+<br/>
+<br/>
 <audio *ngIf="url" controls>
   <source [src]="url" type="audio/mp3">
   Your browser does not support the audio tag.

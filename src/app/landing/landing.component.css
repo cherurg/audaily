@@ -1,0 +1,33 @@
+h1 {
+  text-align: center;
+  margin-top: -1em;
+}
+
+.logo {
+  text-align: center;
+}
+
+button {
+  /*Reset's every elements apperance*/
+  background: none repeat scroll 0 0 transparent;
+  border: medium none;
+  border-spacing: 0;
+  font-weight: normal;
+  line-height: 1.42rem;
+  list-style: none outside none;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  text-decoration: none;
+  text-indent: 0;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+}
+
+.enter {
+  font-size: 2em;
+  margin-top: 1em;
+}
