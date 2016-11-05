@@ -9,7 +9,7 @@ export class AppState {
   _state: InternalStateType = { };
 
   constructor() {
-
+    this._state['token'] = localStorage.getItem('token')
   }
 
   // already return a clone of the current state
@@ -30,6 +30,10 @@ export class AppState {
 
   set(prop: string, value: any) {
     // internally mutate our state
+    if (typeof value === 'string') {
+      localStorage.setItem(prop, value)
+    }
+
     return this._state[prop] = value;
   }
 
